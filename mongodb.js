@@ -183,7 +183,8 @@ module.exports = function(RED) {
 									}
 								})
 							} else if (node.operation === 'delete') {
-								coll.remove(msg.payload, function(err, items) {
+								//coll.remove(msg.payload, function(err, items) {
+								coll.deleteOne(msg.payload, function(err, items) {
 									if (err) {
 										node.error(err, msg)
 									} else {
